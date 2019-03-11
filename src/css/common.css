@@ -1,0 +1,61 @@
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+li,
+ol,
+dl,
+dt,
+dd,
+input,
+select,
+button,
+textarea {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "FZLTHK--GBK1-0", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  outline: none;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-size: 0.24rem;
+}
+.util-toast-wrapper {
+  z-index: 10001;
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0.01;
+  -webkit-transition: 0.3s all cubic-bezier(0.28, 1.66, 0.86, 1.24);
+  -o-transition: 0.3s all cubic-bezier(0.28, 1.66, 0.86, 1.24);
+  transition: 0.3s all cubic-bezier(0.28, 1.66, 0.86, 1.24);
+  margin: 0 17px;
+  pointer-events: none;
+}
+.util-toast-wrapper.active {
+  bottom: 200px;
+  opacity: 1;
+}
+.util-toast-wrapper.active.disabled {
+  -webkit-transition: 0.7s all linear;
+  -o-transition: 0.7s all linear;
+  transition: 0.7s all linear;
+  opacity: 0;
+}
+.util-toast-wrapper .util-toast {
+  color: white;
+  background-color: #333;
+  opacity: 0.8;
+  padding: 13px 12px;
+  border-radius: 7px;
+  font-size: 13px;
+  display: inline-block;
+}

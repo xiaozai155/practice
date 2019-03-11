@@ -1,0 +1,27 @@
+{
+  "name": "practive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=development node_modules/gulp/bin/gulp.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "babel": "^6.23.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cli": "^2.0.1"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5",
+    "browser-sync": "^2.26.3",
+    "delete": "^1.1.0",
+    "gulp-less": "^4.0.1"
+  }
+}
