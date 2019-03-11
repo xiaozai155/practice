@@ -1,5 +1,8 @@
 $(function() {
     function pageInit() {
+        // window.toast('你好');
+        // window.toast(args.name);
+        window.toast(args.age);
         fetchData();
     }
 

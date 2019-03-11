@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOC</title>
+    <style>
+        select {
+            display: none;
+        }
+     </style>
+     <script src="http://libs.baidu.com/zepto/0.8/zepto.min.js"></script>
+     <link rel="stylesheet" href="src/css/common.css"></head>
+     <link rel="stylesheet" href="src/css/day20.css"></head>
+</head>
+<body>
+    <!-- 任务一 -->
+    <input id="name" type="text">    
+    <button id="submit-btn">Submit</button>
+    <!-- 任务二 -->
+    <label>
+            <input id="school" name="status" type="radio">
+            School
+        </label>
+        <label>
+            <input id="company" name="status" type="radio">
+            Company
+        </label>
+    
+        <select id="school-select">        
+            <option>北京邮电大学</option>
+            <option>黑龙江大学</option>
+            <option>华中科技大学</option>
+        </select>
+    
+        <select id="company-select">        
+            <option>百度</option>
+            <option>爱奇艺</option>        
+    </select>
+    <!-- 任务三 -->
+    <ul class="palette">
+        <li style="background-color:crimson"></li>
+        <li style="background-color:bisque"></li>
+        <li style="background-color:blueviolet"></li>
+        <li style="background-color:coral"></li>
+        <li style="background-color:chartreuse"></li>
+        <li style="background-color:darkolivegreen"></li>
+        <li style="background-color:cyan"></li>
+        <li style="background-color:#194738"></li>        
+    </ul>
+    
+    <p class="color-picker"></p>
+
+    <script>
+        window.onload = function(){
+            // 任务一
+            var name = document.querySelector("#name");
+            var btn = document.querySelector("#submit-btn"); 
+            btn.addEventListener("click",function(){
+                console.log(name.value);
+            })
+            btn.addEventListener("keydown",function(e){
+                if(e.keyCode==13){
+                    console.log(name.value);
+                } else if(e.keyCode==27){
+                    name.value = "";
+                }
+            })
+            // 任务二
+            var school = document.querySelector("#school");
+            var company = document.querySelector("#company");
+            var schoolSelect = document.querySelector("#school-select");
+            var companyselect = document.querySelector("#company-select");
+            school.addEventListener("click",function(){
+                schoolSelect.style.display = "block";
+                companyselect.style.display = "none";
+            });
+            company.addEventListener("click",function(){
+                schoolSelect.style.display = "none";
+                companyselect.style.display = "block";
+            });
+            // 任务三
+            // var palette = document.querySelector('.palette');
+            // var lis = palette.querySelectorAll('li');
+            // for(var i = 0; i < lis.length; i++){
+            //     lis[i].addEventListener('click',function(e){
+            //         var ps = document.querySelectorAll('.color-picker')[0];
+            //         var t = e.target;
+            //         var c = t.style.backgroundColor;
+            //         ps.style.color = c;
+            //         ps.innerHTML = c;
+            //     })
+            // }
+            var oUL = document.querySelectorAll('.palette')[0];
+            oUL.onclick = function(e){
+                var t = e.target;
+                var c = t.style.backgroundColor;
+                var para = document.getElementsByClassName('color-picker')[0];
+                para.innerHTML = c;
+                para.style.color = c;
+            }
+            // var oUl = document.querySelector('.palette');
+            // oUl.onclick = function(e){
+            //     var t = e.target;
+            //     var c = t.style.backgroundColor;
+            //     var para = document.getElementsByClassName('color-picker')[0];
+            //     para.innerHTML = c;
+            //     para.style.color = c;
+            // }
+            
+        }
+
+    </script>
+    <script src="src/js/common.js"></script>
+    <script src="src/js/day20.js"></script>
+</body>
+</html>

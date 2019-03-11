@@ -24,7 +24,7 @@ textarea {
   outline: none;
   box-sizing: border-box;
   font-weight: normal;
-  font-size: 0.24rem;
+  font-size: 0.17rem;
 }
 .util-toast-wrapper {
   z-index: 10001;
@@ -54,8 +54,8 @@ textarea {
   color: white;
   background-color: #333;
   opacity: 0.8;
-  padding: 13px 12px;
+  padding: 20px 16px;
   border-radius: 7px;
-  font-size: 13px;
+  font-size: 16px;
   display: inline-block;
 }
