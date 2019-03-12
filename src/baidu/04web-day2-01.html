@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        #text5{
+            color:gray;
+        }
+        div{
+            width:200px;
+            height:200px;
+            background-color:red;
+        }
+        .box{
+            background-color:pink;
+        }
+    </style>
+</head>
+<body>
+<!--03案例点击按钮禁用文本框-->
+<input type="button" value="按钮" id="btn">
+<input type="text" value="哈哈哈" id="text">
+<br>
+<!--04案例点击按钮修改列表背景颜色-->
+<input type="button" value="按钮" id="btn1">
+<ul id="ul">
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+</ul>
+<br>
+<!--05案例阻止超链接跳转-->
+<a href="https://www.baidu.com" id="a">百度</a>
+<br>
+<!--06案例点击小图切换大图-->
+<a href="images/01.jpg" id="a1"><img src="images/02.jpg" alt=""></a>
+<img src="" alt="" id="img">
+<br>
+<!--07案例美女相册-->
+<!--08案例列表隔行变色-->
+<ul id="ul1">
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+</ul>
+<br>
+<!--09案例列表的高亮显示-->
+<ul id="ul2">
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+    <li>你好</li>
+</ul>
+<br>
+<!--10案例显示和隐藏二维码-->
+<!--11根据name属性值获取元素-->
+<input type="button" value="按钮" id="btn4">
+<input type="text" value="小崽" name="name">
+<input type="text" value="小崽" name="name1">
+<input type="text" value="小崽" name="name2">
+<input type="text" value="小崽" name="name1">
+<input type="text" value="小崽" name="name3">
+<br>
+<!--12根据类样式的名字来获取元素-->
+<!--13获取元素的其他的方式-->
+<!--14总结获取元素的方式-->
+<!--15案例div高亮显示-->
+
+<!--16案例模拟搜索框-->
+<input type="text" value="请输入" id="text5">
+<br>
+<!--17案例验证文本框密码长度-->
+<!--18案例设置和获取文本框的值-->
+<!--19innerText和textContent-->
+<!--20innerText和innerHTML的区别-->
+<!--21自定义属性引入-->
+
+<!--22自定义属性设置和获取-->
+<ul id="ul3">
+    <li>小仔</li>
+    <li>小仔</li>
+    <li>小仔</li>
+    <li>小仔</li>
+    <li>小仔</li>
+    <li>小仔</li>
+</ul>
+<br>
+<!--23移除某个元素的自定义属性24tab切换案例实现-->
+<input type="button" value="按钮" id="btn5">
+<div class="box" id="box1" >
+
+</div>
+</body>
+<script>
+//    03案例点击按钮禁用文本框
+var btn = document.getElementById('btn');
+var text = document.getElementById('text');
+btn.onclick = function() {
+    text.disabled = true;
+};
+//    04案例点击按钮修改列表背景颜色
+var btn1 = document.getElementById('btn1');
+var ul = document.getElementById('ul');
+btn1.onclick = function() {
+    ul.style.backgroundColor = 'red';
+};
+//    05案例阻止超链接跳转
+var a = document.getElementById('a');
+a.onclick = function (){
+  return false;
+};
+//    06案例点击小图切换大图
+var a1 = document.getElementById('a1');
+var img = document.getElementById('img');
+a1.onclick = function(){
+    img.src = this.href;
+    return false;
+};
+//    07案例美女相册
+//    08案例列表隔行变色
+var lis = document.getElementById('ul1').getElementsByTagName('li');
+for(var i = 0; i < lis.length; i++){
+    if(i%2 == 0){
+        lis[i].style.backgroundColor = "red";
+    }else{
+        lis[i].style.backgroundColor = 'yellow';
+    }
+}
+//    09案例列表的高亮显示
+var lis1 = document.getElementById('ul2').getElementsByTagName('li');
+for(var i = 0; i < lis1.length; i++){
+    lis1[i].onmouseover = function() {
+        this.style.backgroundColor = 'pink';
+    };
+    lis1[i].onmouseout = function() {
+        this.style.backgroundColor = '';
+    }
+}
+//    10案例显示和隐藏二维码
+//    11根据name属性值获取元素
+var btn4 = document.getElementById('btn4');
+var text2 = document.getElementsByName('name1');
+btn4.onclick = function() {
+    for(var i = 0; i < text2.length; i++){
+        text2[i].value = '小仔';
+    }
+};
+//    12根据类样式的名字来获取元素
+
+//    13获取元素的其他的方式
+//    14总结获取元素的方式
+//    15案例div高亮显示
+//    16案例模拟搜索框
+var text5 = document.getElementById('text5');
+text5.onfocus = function(){
+    if(this.value == '请输入'){
+        this.value = '';
+        this.style.color = 'black';
+    }
+}
+text5.onblur = function(){
+    if(this.value.length == 0){
+        this.value = '请输入';
+        this.style.color = 'gray';
+    }
+}
+//    17案例验证文本框密码长度
+//    18案例设置和获取文本框的值
+//    19innerText和textContent
+//    20innerText和innerHTML的区别
+//    21自定义属性引入
+//    22自定义属性设置和获取
+var lis4 = document.getElementById('ul3').getElementsByTagName('li');
+for(var i = 0; i < lis4.length; i++){
+    lis4[i].setAttribute('soced',(i+1)*10);
+    lis4[i].onclick = function() {
+        alert(this.getAttribute('soced'));
+    }
+}
+//    23移除某个元素的自定义属性24tab切换案例实现
+var box1 = document.getElementById("box1");
+    var btn5 = document.getElementById('btn5');
+    btn5.onclick = function(){
+        box1.removeAttribute('class');
+    }
+</script>
+</html>

@@ -21,6 +21,21 @@ function jsStreamTask() {
         .pipe(dest('./dist/js'));
 }
 
+function compileLess_01() {
+    return src('./src/product/less/*.less')
+        .pipe(less({
+            paths: [ path.join(__dirname, 'less', 'includes') ]
+        }))
+        .pipe(dest('./src/product/css/'));
+}
+function compileLess_02() {
+    return src('./src/baidu/less/*.less')
+        .pipe(less({
+            paths: [ path.join(__dirname, 'less', 'includes') ]
+        }))
+        .pipe(dest('./src/baidu/css/'));
+}
+
 function compileLess() {
     return src('./src/less/*.less')
         .pipe(less({
@@ -45,12 +60,16 @@ function dev() {
     });
     cleanCss();
     compileLess();
-    watch(['./src/js/*', './src/less/*'], function(cb) {
+    compileLess_01();
+    compileLess_02();
+    watch(['./src/js/*', './src/less/*', './src/product/'], function(cb) {
         // body omitted
         compileLess();
+        compileLess_01();
+        compileLess_02();
         cb();
         reload();
     });
 }
 
-exports.default = series(dev);;
+exports.default = series(dev);

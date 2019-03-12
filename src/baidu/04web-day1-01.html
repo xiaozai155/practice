@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>这是一个网页</title>
+    <style>
+        #img{
+            display:none;
+        }
+        .div{
+            width:300px;
+            height:300px;
+            background-color:red;
+        }
+        .cls{
+            display:none;
+        }
+        .cl{
+            background-color:black;
+        }
+    </style>
+</head>
+<body>
+<!--01点击按钮弹出对话框-->
+<input type="button" value="按钮" id="btn">
+<br>
+<!--02点击按钮显示图片-->
+<input type="button" value="按钮1" id="btn1">
+<img src="images/01.jpg" alt="" id="img">
+<br>
+<!--03案例点击按钮修改p标签的内容-->
+<input type="button" value="按钮2" id="btn2">
+<p id="p">你好</p>
+<br>
+<!--04案例点击按钮修改a标签的地址和热点文字-->
+<input type="button" value="按钮3" id="btn3">
+<a href="https://www.baidu.com" id="a">百度</a>
+<br>
+<!--05案例点击按钮修改多个p标签的文字内容-->
+<input type="button" value="按钮4" id="btn4">
+<p class="p1">你好</p>
+<p class="p1">你好</p>
+<p class="p1">你好</p>
+<p class="p1">你好</p>
+<p class="p1">你好</p>
+<p class="p1">你好</p>
+<p class="p1">你好</p>
+<p class="p1">你好</p>
+<br>
+<!--06案例点击按钮修改图片的alt和title属性-->
+<input type="button" value="按钮5" id="btn5">
+<img src="images/01.jpg" alt="你好" title="小崽" id="img1" >
+<br>
+<!--07案例点击按钮修改所有文本框的值-->
+<input type="button" value="按钮6" id="btn6">
+<input type="text" value="你好" class="text">
+<input type="text" value="你好" class="text">
+<input type="text" value="你好" class="text">
+<br>
+<!--08案例点击每个图片弹出对话框-->
+<img src="images/01.jpg" alt="" id="img2">
+<br>
+<!--09案例点击按钮修改按钮的value属性-->
+<input type="button" value="按钮7" id="btn7">
+<br>
+<!--10案例点击图片修改自身的宽和高-->
+<img src="images/01.jpg" alt="" id="img3">
+<br>
+<!--11案例排他功能-->
+<input type="button" value="小仔" class="btn8">
+<input type="button" value="小仔" class="btn8">
+<input type="button" value="小仔" class="btn8">
+<input type="button" value="小仔" class="btn8">
+<input type="button" value="小仔" class="btn8">
+<br>
+<!--12案例点击超链接切换图片-->
+<a href="images/02.jpg" id="a1"><img src="images/01.jpg" alt="" id="img4"></a>
+<br>
+<!--13案例点击按钮修改图片-->
+<input type="button" value="按钮9" id="btn9">
+<img src="images/01.jpg" alt="" id="img5">
+<br>
+<!--14案例点击按钮修改性别和兴趣-->
+<input type="button" value="修改性别" id="btn10">
+<input class="radio" type="radio" value="1" name="xinbie">男
+<input class="radio" type="radio" value="2" name="xinbie">女
+<input class="radio" type="radio" value="3" name="xinbie">保密
+<br>
+<!--15案例点击按钮选择菜单-->
+<input type="button" value="按钮11" id="btn11">
+<select name="" id="select">
+    <option value="1">黄瓜</option>
+    <option value="2">西瓜</option>
+    <option value="3" id="option">甜瓜</option>
+    <option value="4">苦瓜</option>
+    <option value="5">白菜</option>
+</select>
+<br>
+<!--16案例点击按钮设置div的宽和高和背景颜色-->
+<input type="button" value="按钮12" id="btn12">
+<div id="div1"></div>
+<br>
+<!--17案例点击按钮设置div隐藏-->
+<input type="button" value="按钮13" id="btn13">
+<div class="div" id="div2"></div>
+<br>
+<!--18案例点击按钮显示和隐藏div-->
+<input type="button" value="隐藏" id="btn14">
+<div class="div" id="div3"></div>
+<br>
+<!--21案例网页开关灯-->
+<input type="button" value="开/关灯" id="btn15">
+<script>
+    function my$(id) {
+        return document.getElementById(id);
+    }
+//    01点击按钮弹出对话框
+    var btn = document.getElementById('btn');
+    btn.onclick = function() {
+        alert('你好')
+    };
+//02点击按钮显示图片
+    var btn1 = document.getElementById('btn1');
+    btn1.onclick = function() {
+        my$('img').style.display = 'block';
+    };
+//    03案例点击按钮修改p标签的内容
+    var btn2 = my$("btn2");
+    var p = my$('p');
+    btn2.onclick = function() {
+        p.innerHTML = '小崽';
+    };
+//    04案例点击按钮修改a标签的地址和热点文字
+    my$('btn3').onclick = function() {
+        my$('a').href = "http://www.taobao.com";
+        my$('a').innerHTML = '淘宝';
+    };
+//    05案例点击按钮修改多个p标签的文字内容
+    var p1 = document.querySelectorAll('.p1');
+    my$('btn4').onclick = function(){
+        for(var i = 0; i < p1.length; i++){
+            p1[i].innerHTML = '小崽';
+        }
+    };
+//    06案例点击按钮修改图片的alt和title属性
+    my$('btn5').onclick = function(){
+        my$('img1').title = '小仔';
+    };
+//    07案例点击按钮修改所有文本框的值
+    var text = document.querySelectorAll('.text');
+    my$('btn6').onclick = function() {
+        for(var i = 0; i < text.length; i++){
+            text[i].value = '小仔';
+        }
+    };
+//    08案例点击每个图片弹出对话框
+    my$('img2').onclick = function() {
+        alert('你好');
+    };
+//    09案例点击按钮修改按钮的value属性
+    my$('btn7').onclick = function() {
+        this.value = '小仔';
+    };
+//    10案例点击图片修改自身的宽和高
+    my$('img3').onclick = function() {
+      this.style.width = '200px';
+        this.style.height = '200px';
+    };
+//    11案例排他功能
+    var btn8 = document.querySelectorAll('.btn8');
+    for(var i = 0; i < btn8.length; i++){
+        btn8[i].onclick = function() {
+            for(var j = 0; j < btn8.length; j++){
+                btn8[j].value = '小仔';
+            }
+            this.value = '小崽';
+        }
+    }
+//    12案例点击超链接切换图片
+    my$('img4').onclick = function() {
+      this.src = my$('a1').href;
+        return false;
+    };
+//    13案例点击按钮修改图片
+    my$('btn9').onclick = function() {
+        my$('img5').src = "images/02.jpg";
+    };
+//    14案例点击按钮修改性别和兴趣
+    var radio = document.querySelectorAll('.radio');
+    my$('btn10').onclick = function() {
+        radio[1].checked = true;
+    };
+//    15案例点击按钮选择菜单
+    my$('btn11').onclick = function() {
+        my$('option').selected = true;
+    };
+//    16案例点击按钮设置div的宽和高和背景颜色
+    my$('btn12').onclick = function() {
+        my$('div1').className = 'div';
+    };
+//    17案例点击按钮设置div隐藏
+    my$('btn13').onclick = function() {
+        my$('div2').className = 'cls';
+    };
+//    18案例点击按钮显示和隐藏div
+    my$('btn14').onclick = function() {
+          if(this.value == '隐藏'){
+              my$('div3').style.display = 'none';
+              this.value = '显示';
+          }else{
+              my$('div3').style.display = 'block';
+              this.value = '隐藏';
+          }
+    };
+//    21案例网页开关灯
+    my$('btn15').onclick = function() {
+        document.body.className = document.body.className != 'cl' ? 'cl' : '';
+    }
+</script>
+</body>
+</html>
