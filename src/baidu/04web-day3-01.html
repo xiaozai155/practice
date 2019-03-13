@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+        #box1{
+            width:300px;
+            height:300px;
+            border:1px solid red;
+        }
+        #box2{
+            width:300px;
+            height:300px;
+            border:1px solid red;
+        }
+        #box3{
+            width:300px;
+            height:300px;
+            border:1px solid red;
+        }
+        #box4{
+            width:300px;
+            height:300px;
+            border:1px solid red;
+        }
+        #box5{
+            width:300px;
+            height:300px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+<!--08案例点击按钮设置div中p标签改变背景颜色-->
+<input type="button" value="按钮" id="btn">
+<div id="box">
+    <span>小崽</span>
+    <p>这是p</p>
+    <span>小崽</span>
+    <p>这是p</p>
+    <span>小崽</span>
+    <p>这是p</p>
+</div>
+<br>
+<!--09案例节点操作隔行变色-->
+<input type="button" value="按钮" id="btn1">
+<ul id="ul">
+    <li>小崽</li>
+    <li>小崽</li>
+    <li>小崽</li>
+    <li>小崽</li>
+    <li>小崽</li>
+</ul>
+<br>
+<!--10节点的兼容代码-->
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<br>
+<!--13元素创建的不同方式-->
+<input type="button" value="来个图片" id="btn2">
+<br>
+<!--16案例点击按钮创建一个图片-->
+<!--17案例点击按钮创建列表-->
+<input type="button" value="按钮" id="btn3">
+<div id="box1"></div>
+<br>
+<!--19扩展document.write可以嵌入外部的代码内容-->
+<!--20第三种元素创建方式-->
+<!--21案例动态创建列表-->
+<input type="button" value="按钮" id="btn4">
+<div id="box2"></div>
+<br>
+<!--22案例动态创建表格-->
+<br>
+<input type="button" value="创建列表" id="btn5">
+<div id="box3"></div>
+<br>
+<!--23元素相关的操作的方法-->
+<input type="button" value="创建" id="btn6">
+<input type="button" value="删除一个" id="btn7">
+<input type="button" value="全部删除" id="btn8">
+<div id="box4"></div>
+<!--25为元素绑定事件-->
+<input type="button" value="显示" id="btn9">
+<div id="box5"></div>
+<!--26为元素绑定事件的兼容代码-->
+<input type="button" value=" 按钮">
+<script src="common.js"></script>
+<script>
+//    08案例点击按钮设置div中p标签改变背景颜色
+
+my$('btn').onclick = function() {
+    var ps = my$('box').children;
+    for(var i = 0; i < ps.length; i++){
+        if(ps[i].nodeName == 'P'){
+            ps[i].style.backgroundColor = 'red';
+        }
+    }
+};
+//    09案例节点操作隔行变色
+my$('btn1').onclick = function(){
+    var lis = my$('ul').children;
+    for(var i = 0; i < lis.length; i++){
+        lis[i].style.backgroundColor  = i % 2 ==0 ? 'red' : 'yellow';
+    }
+};
+//    10节点的兼容代码
+function setfirstElement(element){
+    if(element.firstElementChild){
+        return element.firstElementChild;
+    }else{
+        var onde = element.firstChild;
+        while(onde && onde.nodeType == 1){
+            onde = onde.nextSibling;
+        }
+        return onde;
+    }
+}
+function setlastElement(element){
+    if(element.lastElementChild){
+        return element.lastElementChild;
+    }else{
+        var onde = element.lastChild;
+        while(onde && onde.nodeType == 1){
+            onde = onde.previousSibling;
+        }
+        return onde;
+    }
+}
+console.log(setfirstElement(my$('ul1')));
+console.log(setlastElement(my$('ul1')));
+//    13元素创建的不同方式
+my$('btn2').onclick = function() {
+        document.body.innerHTML = '<img src="images/01.jpg">';
+};
+//    16案例点击按钮创建一个图片
+//    17案例点击按钮创建列表
+var arr = ['小仔1','小仔2','小仔3','小仔4','小仔5'];
+my$('btn3').onclick = function() {
+    var set = '';
+    set = '<ul>';
+        for(var i =0; i < arr.length; i++){
+
+            set += '<li>'+arr[i]+'</li>';
+        }
+    set += '</ul>';
+
+    my$('box1').innerHTML = set;
+    var lis1 = my$('box1').getElementsByTagName('li');
+    for(var i =0; i < lis1.length; i++){
+        lis1[i].onmouseover = onmouseovernum;
+        lis1[i].onmouseout = onmouseoutnum;
+    }
+    function onmouseovernum(){
+        this.style.backgroundColor = 'red';
+    }
+    function onmouseoutnum(){
+        this.style.backgroundColor = '';
+    }
+};
+//    19扩展document.write可以嵌入外部的代码内容
+//    20第三种元素创建方式
+//    21案例动态创建列表
+var arr1 = ['小仔1','小仔2','小仔3','小仔4','小仔5'];
+my$('btn4').onclick = function(){
+    var ul = document.createElement('ul');
+    my$('box2').appendChild(ul);
+    for(var i = 0; i < arr1.length; i++){
+        var lis2 = document.createElement('li');
+        lis2.innerHTML = arr1[i];
+        ul.appendChild(lis2);
+        lis2.onmouseover = onmouseovernum;
+        lis2.onmouseout = onmouseoutnum;
+    }
+    function onmouseovernum(){
+        this.style.backgroundColor = 'red';
+    }
+    function onmouseoutnum(){
+        this.style.backgroundColor = '';
+    }
+};
+//    22案例动态创建表格
+var arr2  = [
+    {name:'百度',href:'http://www.baidu.com'},
+    {name:'土豆',href:'http://www.tudou.com'},
+    {name:'快播',href:'http://www.kuaibo.com'},
+    {name:'优酷',href:'http://www.youku.com'},
+    {name:'有品',href:'http://www.youping.com'}
+]
+my$('btn5').onclick = function(){
+    var table = document.createElement('table');
+    my$('box3').appendChild(table);
+    for(var i = 0; i < arr2.length; i++){
+        var tr = document.createElement('tr');
+        table.appendChild(tr);
+        var td = document.createElement('td');
+        tr.appendChild(td);
+        td.innerHTML = arr2[i].name;
+        var td1 = document.createElement('td');
+        tr.appendChild(td1);
+        td1.innerHTML = '<a href='+arr2[i].href+'>'+arr2[i].name+'</a>'
+    }
+};
+//    23元素相关的操作的方法
+var num = 0;
+my$('btn6').onclick = function() {
+    num++;
+    var btnt = document.createElement('input');
+    btnt.type = 'button';
+    btnt.value = '按钮'+num;
+    btnt.id = 'btt';
+    my$('box4').appendChild(btnt);
+
+};
+my$('btn7').onclick = function() {
+    my$('box4').removeChild(my$('box4').firstChild);
+};
+my$('btn8').onclick = function() {
+    while(my$('box4').firstChild){
+        my$('box4').removeChild(my$('box4').firstChild);
+    }
+};
+//    25为元素绑定事件
+my$('btn9').onclick = function(){
+    if(!my$('btn10')){
+        var btn10 = document.createElement('input');
+        btn10.type = 'button';
+        btn10.value = '按钮';
+        btn10.id = 'btn10';
+        my$('box5').appendChild(btn10);
+    }
+
+};
+//    26为元素绑定事件的兼容代码
+    function addEventListener(element,type,fn){
+        if(element.addEventListener){
+            element.addEventListener(type,fn,false);
+        }else if(element.attachEvent){
+            element.attachEvent(type,fn);
+        }else{
+            element.['on'+type] =fn;
+        }
+    }
+</script>
+</body>
+</html>

@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="656a844b-4998-4c98-82f9-ad733e82fbca" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/practice_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/baidu/04web-day1-01.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/baidu/04web-day2-01.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/baidu/04web-day3-01.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="practice.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,8 +30,8 @@
       <file leaf-file-name="04web-day1-01.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/baidu/04web-day1-01.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.0">
-              <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+            <state vertical-scroll-proportion="-3.125">
+              <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
               <folding>
                 <element signature="e#3159#3210#0" expanded="false" />
                 <element signature="e#3304#3331#0" expanded="false" />
@@ -61,30 +58,70 @@
       <file leaf-file-name="04web-day2-01.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/baidu/04web-day2-01.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.625">
-              <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
+            <state vertical-scroll-proportion="-21.25">
+              <caret line="183" column="12" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="24tab切换案例实现.html" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/24tab切换案例实现.html">
+      <file leaf-file-name="04web-day3-01.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/baidu/04web-day3-01.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7410359">
-              <caret line="122" column="39" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.8071979">
+              <caret line="249" column="9" selection-start-line="249" selection-start-column="9" selection-end-line="249" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="copy-tree.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/gulp-cli/lib/shared/log/copy-tree.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="11案例切换背景图片.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/11案例切换背景图片.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-24.916666">
+              <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="12案例全选和全不选的实现.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/12案例全选和全不选的实现.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.627451">
+              <caret line="141" column="36" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
               <folding>
-                <element signature="e#1123#1138#0" expanded="false" />
+                <element signature="n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="day20.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day20.html">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/baidu/common.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="4" column="38" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="07获取相关的节点.html" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/07获取相关的节点.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-6.25">
+              <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="49" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -132,6 +169,9 @@
         <option value="$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/10案例显示和隐藏二维码.html" />
         <option value="$PROJECT_DIR$/src/baidu/04web-day2-01.html" />
         <option value="$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/24tab切换案例实现.html" />
+        <option value="$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/12案例全选和全不选的实现.html" />
+        <option value="$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/11案例切换背景图片.html" />
+        <option value="$PROJECT_DIR$/src/baidu/04web-day3-01.html" />
       </list>
     </option>
   </component>
@@ -318,6 +358,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="656a844b-4998-4c98-82f9-ad733e82fbca" name="Default" comment="" />
@@ -351,6 +394,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -359,11 +410,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/baidu/04web-day1-01.html</url>
-          <line>182</line>
-          <option name="timeStamp" value="3" />
+          <line>142</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -391,13 +442,6 @@
             <element signature="e#5371#5417#0" expanded="false" />
             <element signature="e#5486#5532#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/baidu/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -432,10 +476,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/07案例美女相册.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7692308">
+          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/10案例显示和隐藏二维码.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7808765">
+          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/24tab切换案例实现.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20318726">
+          <caret line="62" column="33" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
+          <folding>
+            <element signature="e#1123#1138#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/06获取相关的节点.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.115384616">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="20" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/07获取相关的节点.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.25">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="49" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/12案例全选和全不选的实现.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.627451">
+          <caret line="141" column="36" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
+          <folding>
+            <element signature="n#tbody#0;n#table#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp-cli/lib/shared/log/copy-tree.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/baidu/04web-day1-01.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.0">
-          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+        <state vertical-scroll-proportion="-3.125">
+          <caret line="148" column="0" selection-start-line="148" selection-start-column="0" selection-end-line="148" selection-end-column="0" />
           <folding>
             <element signature="e#3159#3210#0" expanded="false" />
             <element signature="e#3304#3331#0" expanded="false" />
@@ -458,37 +562,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/07案例美女相册.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7692308">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/10案例显示和隐藏二维码.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7808765">
-          <caret line="45" column="2" selection-start-line="45" selection-start-column="2" selection-end-line="45" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/baidu/04web-day2-01.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.625">
-          <caret line="97" column="30" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
+        <state vertical-scroll-proportion="-21.25">
+          <caret line="183" column="12" selection-start-line="183" selection-start-column="12" selection-end-line="183" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第2天/04源代码/24tab切换案例实现.html">
+    <entry file="file://$PROJECT_DIR$/src/baidu/common.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7410359">
-          <caret line="122" column="39" selection-start-line="122" selection-start-column="39" selection-end-line="122" selection-end-column="39" />
-          <folding>
-            <element signature="e#1123#1138#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/xiaozai/baiduyun/04.webapi(共140多集)7/资料源码/02-JavaScript-WEB-API-第3天/04源代码/11案例切换背景图片.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.916666">
+          <caret line="45" column="38" selection-start-line="45" selection-start-column="38" selection-end-line="45" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/baidu/04web-day3-01.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8071979">
+          <caret line="249" column="9" selection-start-line="249" selection-start-column="9" selection-end-line="249" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
