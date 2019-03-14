@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <style>
+        #box{
+            width:500px;
+            margin:0 auto;
+        }
+        #text{
+            width:400px;
+            margin:0 auto;
+        }
+        #box1{
+            position:absolute;
+        }
+        #box1 img{
+            width:200px;
+            height:200px;
+        }
+        #btn4{
+
+            margin-top:250px;
+        }
+        #box2{
+            width:300px;
+            height:300px;
+            border:1px solid pink;
+            position:relative;
+        }
+        span{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+<!--08为同一个元素绑定多个不同事件指向同一个事件处理函数-->
+<input type="button" value="按钮" id="btn">
+<br>
+<!--09案例模拟百度搜索大项目-->
+<div id="box">
+    <input type="text" value="" id="text">
+    <input type="button" value="按钮" id="btn1">
+</div>
+<!--18一起摇起来-->
+<input type="button" value="摇起来" id="btn2">
+<input type="button" value="停" id="btn3">
+<div id="box1">
+    <img src="images/1.jpg" alt="">
+    <img src="images/2.jpg" alt="">
+</div>
+<br>
+<!--19案例一闪一闪亮晶晶-->
+<input type="button" value="亮起来" id="btn4">
+<div id="box2"></div>
+<!--20案例美女时钟-->
+<script src="common.js"></script>
+<script>
+//    08为同一个元素绑定多个不同事件指向同一个事件处理函数
+my$('btn').addEventListener('click',function() {
+    alert('小崽');
+},false);
+my$('btn').addEventListener('mouseover',function(){
+    this.style.backgroundColor = 'pink';
+},false);
+my$('btn').addEventListener('mouseout',function() {
+    this.style.backgroundColor = 'red';
+},false);
+//    09案例模拟百度搜索大项目
+
+var keyWords = ["小杨才是最纯洁的", "小杨才是最帅的", "小段是最猥琐的",
+    "小超是最龌龊的", "传智播客是一个培训机构", "传说在传智有个很帅很纯洁的小杨", "苹果好吃", "苹果此次召回还是没有中国"];
+
+
+//    键盘弹起事件
+    my$('text').onkeyup = function() {
+        if(my$('bo')){
+            my$('box').removeChild(my$('bo'));
+        }
+        var text = this.value;
+        var textobj = [];
+        for(var i = 0 ; i < keyWords.length; i++){
+            if(keyWords[i].indexOf(text) == 0){
+                textobj.push(keyWords[i]);
+            }
+        }
+        if(this.value.length ==0 || textobj.length == 0){
+            while(my$('bo')){
+                my$('box').removeChild(my$('bo'));
+            }
+            return;
+        }
+        var boxobj = document.createElement('div');
+        boxobj.style.width = "400px";
+        boxobj.style.border = "1px solid pink";
+        boxobj.id = 'bo';
+        my$('box').appendChild(boxobj);
+        for(var i = 0; i < textobj.length; i++){
+            var ps = document.createElement('p');
+            ps.innerHTML = textobj[i];
+            ps.style.margin = 0;
+            ps.style.padding = 0;
+            boxobj.appendChild(ps);
+            ps.onmouseover = f1;
+            ps.onmouseout = f2;
+        }
+        function f1(){
+            this.style.backgroundColor = 'pink';
+        }
+        function f2() {
+            this.style. backgroundColor = '';
+        }
+        Math.random()
+    }
+//18一起摇起来
+var time = null;
+    my$('btn2').onclick = function() {
+        clearInterval(time);
+        time = setInterval(function(){
+            var x = parseInt(Math.random()*100 + 1);
+            var y = parseInt(Math.random()*100 + 1);
+            my$('box1').style.top = x + 'px';
+            my$('box1').style.left = y + 'px';
+        },500)
+    };
+    my$('btn3').onclick = function(){
+        clearInterval(time);
+    };
+//19案例一闪一闪亮晶晶
+var time;
+    my$('btn4').onclick = function() {
+        my$('box2').innerHTML = '<span>☆</span>'
+        clearInterval(time);
+        time = setInterval(function(){
+            var x = parseInt(Math.random()*300+1);
+            var y = parseInt(Math.random()*300+1);
+            my$('box2').firstElementChild.style.left = x +'px';
+            my$('box2').firstElementChild.style.top = y +'px';
+        },500)
+    }
+</script>
+</body>
+</html>

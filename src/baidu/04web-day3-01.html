@@ -194,7 +194,7 @@ var arr2  = [
     {name:'快播',href:'http://www.kuaibo.com'},
     {name:'优酷',href:'http://www.youku.com'},
     {name:'有品',href:'http://www.youping.com'}
-]
+];
 my$('btn5').onclick = function(){
     var table = document.createElement('table');
     my$('box3').appendChild(table);
@@ -246,7 +246,7 @@ my$('btn9').onclick = function(){
         }else if(element.attachEvent){
             element.attachEvent(type,fn);
         }else{
-            element.['on'+type] =fn;
+            element['on'+type] =fn;
         }
     }
 </script>
