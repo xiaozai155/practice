@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .map{
+            width : 800px;
+            height : 600px;
+            background-color :gainsboro;
+            position:relative;
+        }
+    </style>
+</head>
+<body>
+<div class="map"></div>
+<script>
+//    创建食物
+    ((function(){
+        var element = [];
+        function Food(x,y,width,height,color){
+            this.x = x || 0;
+            this.y = y || 0;
+            this.width = width || 20;
+            this.height = height || 20;
+            this.color = color || 'blue';
+        }
+        Food.prototype.init = function(map){
+            remove();
+            var div = document.createElement('div');
+            map.appendChild(div);
+            div.style.width = this.width + 'px';
+            div.style.height = this.height + 'px';
+            div.style.backgroundColor = this.color;
+            div.style.position = 'absolute';
+            this.x = parseInt(Math.random()*(map.offsetWidth/this.width)) * this.width;
+            this.y = parseInt(Math.random()*(map.offsetHeight/this.height)) * this.height;
+            div.style.left = this.x + 'px';
+            div.style.top = this.y + 'px';
+            element.push(div);
+        };
+        function remove(){
+            for(var i = 0 ; i < element.length; i++){
+                var ele = element[i];
+                ele.parentNode.removeChild(ele);
+                element.splice(i,1);
+            }
+        }
+        window.Food = Food;
+    })());
+//    创建小蛇
+    ((function(){
+        var element = [];
+        function Sanke(width,height,direction){
+            this.width = width || 20;
+            this.height = height || 20;
+            this.body = [
+                {x : 3, y : 2, color : 'red'},
+                {x : 2, y : 2, color : 'yellow'},
+                {x : 1, y : 2, color : 'yellow'}
+            ];
+            this.direction = direction || 'right';
+        }
+        Sanke.prototype.init = function(map){
+            remove();
+            for(var i = 0; i < this.body.length; i++){
+                var obj = this.body[i];
+                var div = document.createElement('div');
+                div.style.width = this.width + 'px';
+                div.style.height = this.height + 'px';
+                div.style.position = 'absolute';
+                div.style.left = obj.x * this.width + 'px';
+                div.style.top = obj.y * this.height + 'px';
+                div.style.backgroundColor = obj.color;
+                element.push(div);
+                map.appendChild(div);
+            }
+        };
+        Sanke.prototype.move = function(food,map){
+            var i = this.body.length - 1;
+            for(i; i > 0; i--){
+                this.body[i].x = this.body[i-1].x;
+                this.body[i].y = this.body[i-1].y;
+            }
+            switch(this.direction){
+                case 'right' : this.body[0].x += 1;break;
+                case 'left'  : this.body[0].x -= 1;break;
+                case 'top' : this.body[0].y -= 1;break;
+                case 'bottom' : this.body[0].y += 1;break;
+            }
+            var headX = this.body[0].x * this.width;
+            var headY = this.body[0].y * this.height;
+            if(headX == food.x && headY == food.y){
+                var last = this.body[this.body.length-1];
+                this.body.push({
+                    x : last.x,
+                    y : last.y,
+                    color : last.color
+                });
+                food.init(map);
+            }
+        };
+        function remove(){
+            var i = element.length-1;
+            for(; i >= 0; i--){
+                var ele = element[i];
+                ele.parentNode.removeChild(ele);
+                element.splice(i,1);
+            }
+        }
+        window.Sanke = Sanke;
+    })());
+    ((function(){
+        function Game(map){
+            this.food = new Food();
+            this.sanke = new Sanke();
+            this.map = map;
+            that = this;
+        }
+        Game.prototype.init = function(){
+            this.food.init(this.map);
+            this.sanke.init(this.map);
+            this.runmove();
+            this.anjian();
+        };
+        Game.prototype.runmove = function(){
+            var time = setInterval(function(){
+                var maxX = this.map.offsetWidth/this.sanke.width;
+                var maxY = this.map.offsetHeight/this.sanke.height;
+                var headX = this.sanke.body[0].x;
+                var headY = this.sanke.body[0].y;
+                if(headX < 0 || headX >= maxX){
+                    clearInterval(time);
+                    alert('游戏结束')
+                }
+                if(headY < 0 || headY > maxY){
+                    clearInterval(time);
+                    alert('游戏结束了');
+                }
+                this.sanke.init(this.map);
+                this.sanke.move(this.food,this.map);
+            }.bind(that),160);
+        };
+        Game.prototype.anjian = function(){
+            document.addEventListener('keydown',function(e){
+                switch(e.keyCode){
+                    case 37 : this.sanke.direction = 'left';break;
+                    case 38 : this.sanke.direction = 'top';break;
+                    case 39 : this.sanke.direction = 'right';break;
+                    case 40 : this.sanke.direction = 'bottom';break;
+                }
+            }.bind(that),false)
+        };
+        window.Game = Game;
+    })());
+    var gme = new Game(document.querySelector('.map'));
+    gme.init();
+//
+//    var food = new Food;
+//    food.init(document.querySelector('.map'));
+//    var sanke = new Sanke;
+//    sanke.init(document.querySelector('.map'));
+//    setInterval(function(){
+//        sanke.move();
+//        sanke.init(document.querySelector('.map'));
+//    },200)
+</script>
+</body>
+</html>

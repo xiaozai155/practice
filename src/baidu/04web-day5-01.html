@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .box{
+            width:730px;
+            height:454px;
+            margin: 100px auto;
+            overflow:hidden;
+        }
+        .inner{
+            width:730px;
+            height:454px;
+            border:1px solid #b3b3b3;
+            position:relative;
+        }
+        ul{
+            display:flex;
+            flex-direction:row;
+            position:absolute;
+        }
+        li{
+            display:flex;
+            flex:1;
+        }
+        .box1{
+            position:absolute;
+            right:10px;
+            bottom:10px;
+            display:flex;
+            flex-direction:row;
+        }
+        span{
+            display:block;
+            width:20px;
+            height:20px;
+            background-color:white;
+            font:400 12px/20px '';
+            text-align:center;
+            margin-left:5px;
+
+        }
+        .first{
+            background-color:pink;
+            cursor:pointer;
+        }
+        .box2{
+            width:730px;
+            position:absolute;
+            left:0;
+            top:50%;
+            display:none;
+        }
+        #left{
+            opacity:0.5;
+            background-color:grey;
+            font: 400 12px/30px '';
+            text-align:center;
+            width:40px;
+            height:30px;
+            float:left;
+        }
+        #right{
+            opacity:0.5;
+            background-color:grey;
+            font: 400 12px/30px '';
+            text-align:center;
+            width:40px;
+            height:30px;
+            float:right;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <div class="inner">
+        <ul>
+            <li><img src='images/images/1.jpg' alt=""></li>
+            <li><img src='images/images/2.jpg' alt=""></li>
+            <li><img src='images/images/3.jpg' alt=""></li>
+            <li><img src='images/images/4.jpg' alt=""></li>
+            <li><img src='images/images/5.jpg' alt=""></li>
+            <li><img src='images/images/6.jpg' alt=""></li>
+        </ul>
+        <div class="box1">
+            <span class="first">1</span>
+            <span>2</span>
+            <span>3</span>
+            <span>4</span>
+            <span>5</span>
+            <span>6</span>
+        </div>
+        <div class="box2" id="box2">
+            <div id="left"><</div>
+            <div id="right"> > </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="common.js"></script>
+<script>
+    var boxwidth = my$('box').offsetWidth;
+    var inner = my$('box').children[0];
+    var ulobj = inner.children[0];
+    var spans = inner.children[1].children;
+    for(var i = 0; i < spans.length; i++){
+        spans[i].setAttribute('index',i);
+        spans[i].onmouseover = function(){
+            for(var j = 0; j < spans.length; j++){
+                spans[j].removeAttribute('class');
+            }
+            this.className = 'first';
+            var index = this.getAttribute('index');
+            setInterva(ulobj,-index*boxwidth);
+        };
+    }
+    function setInterva(element,target){
+        clearInterval(element.time);
+        element.time = setInterval(function(){
+            var left = ulobj.offsetLeft;
+            var num = 10;
+            num = left < target ? num : -num;
+            left += num;
+            if(Math.abs(target-left)  > Math.abs(num)){
+                element.style.left = left + 'px';
+            }else{
+                clearInterval(element.time);
+                element.style.left = target + 'px';
+            }
+        },5)
+    }
+    my$('box').onmouseover = function(){
+        my$('box2').style.display = "block";
+    };
+    my$('box').onmouseout = function(){
+        my$('box2').style.display = 'none';
+    };
+    var index = 0;
+    my$('left').onclick = function(){
+        index++;
+        if(index < ulobj.children.length){
+
+            setInterva(ulobj,-index*boxwidth);
+        }
+    };
+    my$('right').onclick = function(){
+        if(index > 0){
+
+            index--;
+            setInterva(ulobj,-index*boxwidth);
+        }
+    }
+    document.body.onmousemove = function(){
+        console.log(arguments[0]);
+    }
+</script>
+</html>

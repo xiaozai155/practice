@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" value="按钮" id="btn"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text"><br>
+<input type="text">
+<script>
+    var btn = document.getElementById('btn');
+    var inputs = document.getElementsByTagName('input');
+    var str = [];
+    btn.onclick = function(){
+        for(var i = 0; i < inputs.length; i++){
+            if(inputs[i].type != 'button'){
+                str.push(inputs[i].value);
+            }
+        }
+        console.log(str.join('|'));
+    }
+</script>
+</body>
+</html>
